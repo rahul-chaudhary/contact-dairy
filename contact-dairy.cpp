@@ -10,9 +10,6 @@ class DairyTemplate {
 
     public:
 
-    // DairyTemplate() {
-
-    // }
     DairyTemplate(std::string fname, std::string lname, std::string mail, long long phnum) {
         f_name = fname;
         l_name = lname;
@@ -31,11 +28,12 @@ class DairyTemplate {
 };
 
 class ContactDairy {
-    std::vector<DairyTemplate> d{
+    public:
+    std::vector<DairyTemplate> dairy{
             {"Rahul", "Chaudhary", "rahulchy.rc64@gmail.com", 9135811774},
             {"Sahil", "Chaudhary", "sahilchaudhary@gmail.com", 7004013713},
         };
-    public:
+    
     void addContact() {
         std::cout<<"Adding contact... \n";
     }
@@ -53,7 +51,7 @@ class ContactDairy {
 int main() {
 
    
-    ContactDairy dc;
+    ContactDairy contdry;
     std::cout<< "Select an option: \n";
     std::cout<< "1. Add a contact: \n";
     std::cout<< "2. search a contact: \n";
@@ -64,13 +62,14 @@ int main() {
     std::cin>>inp;
     std::cout<<'\n';
     
-    if(inp == 1)      dc.addContact();
-    else if(inp == 2) dc.searchContact();
-    else if(inp == 3) dc.modifyContact();
-    else if(inp == 4) dc.removeContact();
+    if(inp == 1)      contdry.addContact();
+    else if(inp == 2) contdry.searchContact();
+    else if(inp == 3) contdry.modifyContact();
+    else if(inp == 4) contdry.removeContact();
 
     else std::cout<<"*Error*\nEnter a valid option.\n";
     
+    std::cout<< contdry.dairy[0].getFirstname();
 
     return 0;
 }
