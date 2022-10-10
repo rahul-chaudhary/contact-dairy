@@ -31,7 +31,10 @@ class DairyTemplate {
 };
 
 class ContactDairy {
-
+    std::vector<DairyTemplate> d{
+            {"Rahul", "Chaudhary", "rahulchy.rc64@gmail.com", 9135811774},
+            {"Sahil", "Chaudhary", "sahilchaudhary@gmail.com", 7004013713},
+        };
     public:
     void addContact() {
         std::cout<<"Adding contact... \n";
@@ -49,10 +52,7 @@ class ContactDairy {
 
 int main() {
 
-    std::vector<DairyTemplate> d{
-        {"Rahul", "Chaudhary", "rahulchy.rc64@gmail.com", 9135811774},
-        {"Sahil", "Chaudhary", "sahilchaudhary@gmail.com", 7004013713},
-    };
+   
     ContactDairy dc;
     std::cout<< "Select an option: \n";
     std::cout<< "1. Add a contact: \n";
@@ -64,22 +64,12 @@ int main() {
     std::cin>>inp;
     std::cout<<'\n';
     
-    
-    if(inp == 1) {
-        dc.addContact();
-    }
-    else if(inp == 2) {
-        dc.searchContact();
-    }
-    else if(inp == 3) {
-        dc.modifyContact();
-    }
-    else if(inp == 4) {
-        dc.removeContact();
-    }
-    else {
-        std::cout<<"*Error*\nEnter a valid option.\n";
-    }
+    if(inp == 1)      dc.addContact();
+    else if(inp == 2) dc.searchContact();
+    else if(inp == 3) dc.modifyContact();
+    else if(inp == 4) dc.removeContact();
+
+    else std::cout<<"*Error*\nEnter a valid option.\n";
     
 
     return 0;
