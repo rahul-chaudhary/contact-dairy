@@ -39,8 +39,32 @@ class DairyTemplate {
 
 int main() {
 
+    std::cout<< "Select an option: \n";
+    std::cout<< "1. Add a contact: \n";
+    std::cout<< "2. search a contact: \n";
+    std::cout<< "3. Modify a contact: \n";
+    std::cout<< "4. Remove a contact: \n";
+
+    int inp;
+    std::cin>>inp;
+    std::cout<<'\n';
     
-    int n[10];
+    DairyTemplate dt;
+    if(inp == 1) {
+        dt.addContact();
+    }
+    else if(inp == 2) {
+        dt.SearchContact();
+    }
+    else if(inp == 3) {
+        dt.ModifyContact();
+    }
+    else if(inp == 4) {
+        dt.RemoveContact();
+    }
+    else {
+        std::cout<<"*Error*\nEnter a valid option.\n";
+    }
     std::vector<DairyTemplate> d{
         {"Rahul", "Chaudhary", "rahulchy.rc64@gmail.com", 9135811774},
         {"Sahil", "Chaudhary", "sahilchaudhary@gmail.com", 7004013713},
