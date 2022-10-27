@@ -3,12 +3,8 @@ Search, add, delete */
 #include <iostream>
 #include <vector>
 #include <string.h>
-
-std::vector<DairyTemplate> dairy{
-    {"John", "Doe", "johnjoe@gmail.com", +12125550123 },
-    {"Jane", "Doe", "janedoe@gmail.com", +92127770321 },
-};
-
+#include "ContactDairy.cpp"
+// #include "DiaryTemplate.cpp"
 
 int main() {
    ContactDairy contdry;
